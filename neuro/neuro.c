@@ -27,7 +27,7 @@ struct network* network_init(uint8_t level_len,  const uint8_t* neurons_size){
             net->layers[l].neurons[i].in_size = neurons_size[l-1];
             net->layers[l].neurons[i].in = (float*)malloc(sizeof(float) * neurons_size[l-1]);
             for(int j = 0; j < net->layers[l].neurons[i].in_size; j++){
-                net->layers[l].neurons[i].in[j] =(float)(rand()%100)/500;
+                net->layers[l].neurons[i].in[j] =(float)(rand()%200 - 100)/100;
             }
         }
 

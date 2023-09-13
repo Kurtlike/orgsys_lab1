@@ -16,13 +16,13 @@ int main(){
     struct img* test_square = parse(square_d_1, UNKNOWN);
     struct img* test_circle = parse(circle_d_1, UNKNOWN);
     struct img* test_triangle = parse(triangle_d_1, UNKNOWN);
-    const uint8_t neuro_size[4] = {49,10,9, 3};
+    const uint8_t neuro_size[4] = {49,20, 20,3};
 
     struct network* net = network_init(4, neuro_size);
 
     struct timeval stop, start;
     gettimeofday(&start, NULL);
-    train(net, 3, images, 0.001f, 0.2f);
+    train(net, 3, images, 0.1f, 0.2f);
     gettimeofday(&stop, NULL);
     printf("Train time took %lu ms\n", ((stop.tv_sec - start.tv_sec) * 1000000 + stop.tv_usec - start.tv_usec) / 1000);
 
